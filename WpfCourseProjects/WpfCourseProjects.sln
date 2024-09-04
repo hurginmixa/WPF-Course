@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp1", "WpfApp1\WpfApp1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkupExtensionDemo", "MarkupExtensionDemo\MarkupExtensionDemo.csproj", "{EDC45018-1C3B-4B7B-AD3B-308EEFDBDD6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MackupDictonary", "MackupDictonary\MackupDictonary.csproj", "{9E887CDD-3EE6-4511-972C-993B64531BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MackupDictonary", "MackupDictonary\MackupDictonary.csproj", "{9E887CDD-3EE6-4511-972C-993B64531BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanvasDemo", "CanvasDemo\CanvasDemo.csproj", "{F536E28A-C1AA-4452-8140-77D822265E87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9E887CDD-3EE6-4511-972C-993B64531BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E887CDD-3EE6-4511-972C-993B64531BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E887CDD-3EE6-4511-972C-993B64531BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F536E28A-C1AA-4452-8140-77D822265E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F536E28A-C1AA-4452-8140-77D822265E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F536E28A-C1AA-4452-8140-77D822265E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F536E28A-C1AA-4452-8140-77D822265E87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
