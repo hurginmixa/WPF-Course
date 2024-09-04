@@ -21,6 +21,8 @@ namespace WpfApp1
             InitializeComponent();
 
             ButtonName.Click +=  (s, e) => { };
+
+            CheckBox.Checked +=  (s, e) => { };
         }
     }
 }

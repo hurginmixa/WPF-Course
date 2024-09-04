@@ -19,7 +19,7 @@
             <Button.Content>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Mixa1"/>
-                    <CheckBox Content="Kuku"/>
+                    <CheckBox Name="CheckBox" Content="Kuku"/>
                 </StackPanel>
             </Button.Content>
         </Button>
