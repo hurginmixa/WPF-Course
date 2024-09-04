@@ -1,0 +1,14 @@
+﻿<Window x:Class="MackupDictonary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MackupDictonary"
+        xmlns:markups="clr-namespace:MackupDictonary.Markups"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock FontSize="40" Name="TextBox1" TextWrapping="NoWrap" Text="{markups:DictionaryMarkup Hebrow, Key='Chair' }" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock FontSize="40" Name="TextBox2" TextWrapping="NoWrap" Text="{markups:DictionaryMarkup Russian, Key='Table'}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,180,0,0"/>
+    </Grid>
+</Window>
