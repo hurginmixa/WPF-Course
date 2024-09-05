@@ -8,8 +8,8 @@ namespace WpfApp1.Models
 {
     internal class Student
     {
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
-        public string SecondName { get; set; }
+        public string SecondName { get; set; } = string.Empty;
     }
 }
