@@ -35,7 +35,9 @@ namespace WpfApp1
 
             XDocument document = XDocument.Load(@"Data\XMLFile1.xml");
 
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             foreach (Word word in document.Descendants("Word").Select(w => new Word(w.Element("Key").Value, w.Element("Value").Value)))
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             {
                 
             }

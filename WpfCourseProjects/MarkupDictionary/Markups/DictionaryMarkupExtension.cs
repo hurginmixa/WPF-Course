@@ -1,6 +1,6 @@
 ﻿using System.Windows.Markup;
 
-namespace MackupDictonary.Markups
+namespace MarkupDictionary.Markups
 {
     public class DictionaryMarkupExtension : MarkupExtension
     {
@@ -18,14 +18,14 @@ namespace MackupDictonary.Markups
 
         public enum eDictionayDirect
         {
-            Russian, Hebrow
+            Russian, Hebrew
         }
 
         private readonly Dictionary<string, string> _dictionary;
 
         public DictionaryMarkupExtension(eDictionayDirect dictionaryDirectDirect)
         {
-            _dictionary = (dictionaryDirectDirect == eDictionayDirect.Hebrow) ? Eng2Hebr : Eng2Rus;
+            _dictionary = (dictionaryDirectDirect == eDictionayDirect.Hebrew) ? Eng2Hebr : Eng2Rus;
         }
 
         public string Key { get; set; } = "";
