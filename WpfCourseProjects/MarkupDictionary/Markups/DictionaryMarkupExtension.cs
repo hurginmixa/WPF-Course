@@ -2,6 +2,11 @@
 
 namespace MarkupDictionary.Markups
 {
+    public enum eDictionaryDirect
+    {
+        Russian, Hebrew
+    }
+
     public class DictionaryMarkupExtension : MarkupExtension
     {
         private static readonly Dictionary<string, string> Eng2Rus = new Dictionary<string, string>()
@@ -16,22 +21,14 @@ namespace MarkupDictionary.Markups
             { "Table", "שולחן" }
         };
 
-        public enum eDictionayDirect
-        {
-            Russian, Hebrew
-        }
-
-        private readonly Dictionary<string, string> _dictionary;
-
-        public DictionaryMarkupExtension(eDictionayDirect dictionaryDirectDirect)
-        {
-            _dictionary = (dictionaryDirectDirect == eDictionayDirect.Hebrew) ? Eng2Hebr : Eng2Rus;
-        }
+        public eDictionaryDirect Direct { get; set; } = eDictionaryDirect.Hebrew;
 
         public string Key { get; set; } = "";
 
         public override object? ProvideValue(IServiceProvider serviceProvider)
         {
+            var _dictionary = (Direct == eDictionaryDirect.Hebrew) ? Eng2Hebr : Eng2Rus;
+
             return _dictionary.GetValueOrDefault(Key, defaultValue: "Not found");
         }
     }

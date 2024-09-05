@@ -4,7 +4,7 @@ namespace MarkupDictionary.ViewModels
 {
     internal class ViewModel
     {
-        public DictionaryMarkupExtension.eDictionayDirect DictionaryDirect { get; } =
-            DictionaryMarkupExtension.eDictionayDirect.Russian;
+        public eDictionaryDirect Direct { get; } =
+            eDictionaryDirect.Russian;
     }
 }

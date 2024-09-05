@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock FontSize="40" Name="TextBox1" TextWrapping="NoWrap" Text="{markups:DictionaryMarkup {Binding DictionaryDirect}, Key='Chair'}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock FontSize="40" Name="TextBox2" TextWrapping="NoWrap" Text="{markups:DictionaryMarkup {Binding DictionaryDirect}, Key='Table'}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,180,0,0"/>
+        <TextBlock FontSize="40" Name="TextBox1" TextWrapping="NoWrap" Text="{markups:DictionaryMarkup Direct={Binding Path=Direct}, Key='Chair'}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock FontSize="40" Name="TextBox2" TextWrapping="NoWrap" Text="{markups:DictionaryMarkup Direct={Binding Path=Direct}, Key='Table'}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,180,0,0"/>
     </Grid>
 </Window>
