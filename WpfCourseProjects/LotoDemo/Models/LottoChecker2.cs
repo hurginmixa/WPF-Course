@@ -1,24 +1,27 @@
 ﻿namespace LotoDemo.Models
 {
-    internal class LottoChecker1 : ILottoChecker
+    internal class LottoChecker2 : ILottoChecker
     {
-        public LottoChecker1()
+        public LottoChecker2()
         {
         }
 
         public eCellStatus IsRightNumber(int number)
         {
-            int itemIndex = number % 3;
+            int itemIndex = number % 6;
 
             switch(itemIndex)
             {
                 case 0: 
+                case 1: 
                     return eCellStatus.Good;
 
-                case 1:
+                case 2:
+                case 3:
                     return eCellStatus.Bad;
 
-                case 2:
+                case 4:
+                case 5:
                     return eCellStatus.Empty;
             }
 
