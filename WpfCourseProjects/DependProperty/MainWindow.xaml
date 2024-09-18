@@ -4,9 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DependProperty"
+        xmlns:models="clr-namespace:DependProperty.Models"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel Name="Panel">
+        <StackPanel.Resources>
+            <models:StockCalculator x:Key="StockCalculator1" MyProperty="-12" />
+            <models:StockUpdater x:Key="StockCalculator2" Sum="12" />
+        </StackPanel.Resources>
 
-    </Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Width="180" Height="50" Text="{Binding MyProperty, Source={StaticResource StockCalculator1}}"/>
+            <TextBox Width="180" Height="50" Text="{Binding Sum, Source={StaticResource StockCalculator2}}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Button" Width="180" Margin="15" Click="ButtonBase1_OnClick"/>
+            <Button Content="Button" Width="180" Margin="15" Click="ButtonBase2_OnClick"/>
+        </StackPanel>
+    </StackPanel>
 </Window>

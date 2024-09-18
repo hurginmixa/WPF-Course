@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using DependProperty.Models;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,22 @@ namespace DependProperty
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonBase1_OnClick(object sender, RoutedEventArgs e)
+        {
+            StockCalculator? r = (StockCalculator)Panel.Resources["StockCalculator1"];
+
+            int v = r.MyProperty;
+            r.MyProperty = v + 1;
+        }
+
+        private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
+        {
+            StockUpdater? r = (StockUpdater)Panel.Resources["StockCalculator2"];
+
+            double v = r.Sum;
+            r.Sum = v + 1;
         }
     }
 }
