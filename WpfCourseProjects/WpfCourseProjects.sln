@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Events\Events.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTemplateDemo", "ControlTemplateDemo\ControlTemplateDemo.csproj", "{D0E5E5B3-8DE2-4283-9F31-61178C7DC316}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingDemo", "BindingDemo\BindingDemo.csproj", "{5C694910-64A5-4E71-B393-13CC029C3354}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterDemo", "ConverterDemo\ConverterDemo.csproj", "{3E4EE6D9-05C7-4598-ABD1-2C3907794975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{D0E5E5B3-8DE2-4283-9F31-61178C7DC316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E5E5B3-8DE2-4283-9F31-61178C7DC316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E5E5B3-8DE2-4283-9F31-61178C7DC316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C694910-64A5-4E71-B393-13CC029C3354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C694910-64A5-4E71-B393-13CC029C3354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C694910-64A5-4E71-B393-13CC029C3354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C694910-64A5-4E71-B393-13CC029C3354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E4EE6D9-05C7-4598-ABD1-2C3907794975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E4EE6D9-05C7-4598-ABD1-2C3907794975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E4EE6D9-05C7-4598-ABD1-2C3907794975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E4EE6D9-05C7-4598-ABD1-2C3907794975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <Style x:Key="BorderStyle1" TargetType="{x:Type Border}"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Beige"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Button x:Name="button" Background="Red" Content="Button" HorizontalAlignment="Left" Height="232" Margin="438,29,0,0" VerticalAlignment="Top" Width="311" Click="button_Click">
@@ -19,6 +21,9 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Style="{DynamicResource ButtonStyle1}" x:Name="button1" Content="Button" HorizontalAlignment="Left" Height="94" Margin="143,245,0,0" VerticalAlignment="Top" Width="184"/>
+
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="button1" Content="Button1" HorizontalAlignment="Center" Height="94" Margin="0,179,0,0" VerticalAlignment="Top" Width="184"/>
+
+        <Button Style="{DynamicResource ButtonStyle1}" x:Name="button2" Content="Button2" HorizontalAlignment="Left" Height="94" Margin="459,244,0,0" VerticalAlignment="Top" Width="184"/>
     </Grid>
 </Window>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="ConverterDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConverterDemo"
+        xmlns:converters="clr-namespace:ConverterDemo.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Orientation="Vertical">
+        <StackPanel.Resources>
+            <converters:StockPriceConverter x:Key="StockPriceConverter"/>
+            <converters:StockBrushConverter x:Key="StockBrushConverter"/>
+        </StackPanel.Resources>
+
+        <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding Value, FallbackValue=42, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="112">
+            <TextBox.ContextMenu>
+                 <ContextMenu>
+                     <MenuItem Header="Copy" Command="ApplicationCommands.Copy" />
+                     <MenuItem Header="Cut"  Command="ApplicationCommands.Cut"/>
+                     <MenuItem Header="Paste"  Command="ApplicationCommands.Paste"/>
+                 </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+        <TextBlock x:Name="textBlock1" 
+                   TextWrapping="NoWrap" 
+                   Text="{Binding Value, FallbackValue=42, Converter={StaticResource StockPriceConverter}, ConverterParameter=12.0}" 
+                   Width="112"/>
+        
+        <TextBlock x:Name="textBlock2" 
+                   TextWrapping="NoWrap" 
+                   Text="{Binding Value, FallbackValue=42, Converter={StaticResource StockPriceConverter}}" 
+                   Width="112" 
+                   Background="{Binding Value, Converter={StaticResource StockBrushConverter}}"/>
+    </StackPanel>
+</Window>
