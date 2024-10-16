@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConverterDemo", "ConverterD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependProperty", "DependProperty\DependProperty.csproj", "{C3B4752D-24C8-4F06-8143-56EF335178BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabWindow", "TabWindow\TabWindow.csproj", "{5ED06C79-06A4-4968-AA69-CC3E3E84B865}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{C3B4752D-24C8-4F06-8143-56EF335178BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3B4752D-24C8-4F06-8143-56EF335178BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3B4752D-24C8-4F06-8143-56EF335178BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED06C79-06A4-4968-AA69-CC3E3E84B865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED06C79-06A4-4968-AA69-CC3E3E84B865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED06C79-06A4-4968-AA69-CC3E3E84B865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED06C79-06A4-4968-AA69-CC3E3E84B865}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

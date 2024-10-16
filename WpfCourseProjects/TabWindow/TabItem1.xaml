@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="TabWindow.TabItem1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TabWindow"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="300">
+    <Grid>
+        <TextBlock Text="{Binding Path=ItemNumber, FallbackValue=42}" Width="200" Height="30" TextAlignment="Justify"  VerticalAlignment="Center" HorizontalAlignment="Center" Background="BurlyWood" Margin="50"/>
+    </Grid>
+</UserControl>
