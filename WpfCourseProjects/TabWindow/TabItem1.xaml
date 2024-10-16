@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="300">
     <Grid>
-        <TextBlock Text="{Binding Path=ItemNumber, FallbackValue=42}" Width="200" Height="30" TextAlignment="Justify"  VerticalAlignment="Center" HorizontalAlignment="Center" Background="BurlyWood" Margin="50"/>
+        <TextBlock Text="{Binding Path=ItemNumber, FallbackValue=42}" Width="200" Height="30" TextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Background="BurlyWood" Margin="50"/>
     </Grid>
 </UserControl>
