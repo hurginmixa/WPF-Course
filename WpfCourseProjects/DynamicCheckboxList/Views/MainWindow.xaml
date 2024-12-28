@@ -1,0 +1,45 @@
+﻿<Window x:Class="DynamicCheckboxList.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DynamicCheckboxList"
+        xmlns:vms="clr-namespace:DynamicCheckboxList.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance vms:DynamicCheckboxListVM}">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+
+    <StackPanel Orientation="Vertical">
+        <ContentControl Content="{Binding MainCheckBox}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Name}" ToolTip="{Binding Name}" />
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+
+        <ContentControl Visibility="{Binding MainCheckBox.IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <CheckBox Content="Ого" ToolTip="Ого Ого Го" />
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+
+        <Button Content="Mixa" Command="{Binding AddCommand}" />
+
+        <ItemsControl ItemsSource="{Binding Items}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>    
+    </StackPanel>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Application x:Class="DynamicCheckboxList.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DynamicCheckboxList"
+             xmlns:views="clr-namespace:DynamicCheckboxList.Views"
+             StartupUri="/Views/ToggleButtonWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
