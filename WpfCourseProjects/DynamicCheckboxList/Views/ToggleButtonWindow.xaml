@@ -8,38 +8,87 @@
         Title="ToggleButtonWindow" Height="450" Width="800">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-    </Window.Resources>
-    <StackPanel Orientation="Vertical" Margin="10">
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-            <CheckBox Name="MainBox" Content="Main Box" IsChecked="True" VerticalAlignment="Center"/>
 
-            <ToggleButton Name="ToggleButton1" Margin="5,0,0,0" 
-                          IsChecked="True" 
+        <Style x:Key="RecipeName" TargetType="CheckBox">
+            <Setter Property="IsEnabled" Value="{Binding ElementName=MainBox, Path=IsChecked}" />
+            <Setter Property="Visibility" Value="{Binding ElementName=ToggleButton1, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <Setter Property="Margin" Value="18,0,0,0" />
+        </Style>
+
+        <ControlTemplate x:Key="ToggleButtonOpenCloseList" TargetType="ToggleButton">
+            <Border BorderBrush="Transparent" Background="Transparent" BorderThickness="0">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content">
+                        <Setter.Value>
+                            <Grid>
+                                <Ellipse Width="20" Height="20" StrokeThickness="1" Fill="Transparent" Stroke="Gray" />
+                                <Path Data="M 4,6 L 10,16, 16,6 Z" Fill="Black" />
+                            </Grid>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+
+                <Trigger Property="IsChecked"  Value="False">
+                    <Setter Property="Content">
+                        <Setter.Value>
+                            <Grid>
+                                <Ellipse Width="20" Height="20" StrokeThickness="1" Fill="Transparent" Stroke="Gray" />
+                                <Path Data="M 6,4 L 17,10 6,16 Z" Fill="Black" />
+                            </Grid>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+
+    <StackPanel Orientation="Vertical">
+
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Name="MainBox" Content="Main Box" IsChecked="False" HorizontalAlignment="Left"
+                      VerticalAlignment="Top" Margin="5,5,0,0" />
+
+            <ToggleButton Name="ToggleButton1" Margin="5,0,0,0"
                           IsEnabled="{Binding ElementName=MainBox, Path=IsChecked}"
-                          VerticalAlignment="Center">
-                <ToggleButton.Content>
-                    <Ellipse Name="InnerEllipse" Width="20" Height="20" Fill="Green" />
-                </ToggleButton.Content>
-                <!--<ToggleButton.Style>
+                          VerticalAlignment="Center" Template="{StaticResource ToggleButtonOpenCloseList}">
+                <ToggleButton.Style>
                     <Style TargetType="ToggleButton">
                         <Style.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="InnerEllipse" Property="Width" Value="30" />
-                                <Setter TargetName="InnerEllipse" Property="Fill" Value="Yellow" />
-                            </Trigger>
-                            <Trigger Property="IsChecked" Value="False">
-                                <Setter TargetName="InnerEllipse" Property="Width" Value="50" />
-                                <Setter TargetName="InnerEllipse" Property="Fill" Value="Blue" />
-                            </Trigger>
+                            <DataTrigger Binding="{Binding Path=IsChecked, ElementName=MainBox}" Value="False">
+                                <Setter Property="IsChecked" Value="False"/>
+                            </DataTrigger>
                         </Style.Triggers>
                     </Style>
-                </ToggleButton.Style>-->
+                </ToggleButton.Style>
             </ToggleButton>
         </StackPanel>
 
-        <CheckBox Content="Box1" Margin="18,0,0,0" Visibility="{Binding ElementName=ToggleButton1, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-        <CheckBox Content="Box2" Margin="18,0,0,0" Visibility="{Binding ElementName=ToggleButton1, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-        <CheckBox Content="Box3" Margin="18,0,0,0" Visibility="{Binding ElementName=ToggleButton1, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-        <CheckBox Content="Box4" Margin="18,0,0,0" Visibility="{Binding ElementName=ToggleButton1, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <StackPanel>
+            <CheckBox Content="Box1" Style="{StaticResource RecipeName}" />
+            <CheckBox Content="Box2" Style="{StaticResource RecipeName}" />
+            <CheckBox Content="Box3" Style="{StaticResource RecipeName}" />
+            <CheckBox Content="Box4" Style="{StaticResource RecipeName}" />
+        </StackPanel>
+
+        <StackPanel Margin="5">
+            <CheckBox x:Name="CheckBox1" Content="CheckBox 1"/>
+
+            <CheckBox Content="CheckBox 2" IsEnabled="{Binding ElementName=CheckBox1, Path=IsChecked}">
+                <CheckBox.Style>
+                    <Style TargetType="CheckBox">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=CheckBox1}" Value="False">
+                                <Setter Property="IsChecked" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </CheckBox.Style>
+            </CheckBox>
+        </StackPanel>
+
     </StackPanel>
 </Window>
